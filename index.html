@@ -34,7 +34,7 @@
             position: fixed;
             top: 20px;
             left: 20px;
-            color: #666;
+            color: #cccccc;
             font-size: 11px;
             background: rgba(0, 0, 0, 0.8);
             padding: 10px;
@@ -46,7 +46,7 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            color: #888;
+            color: #ffaa44;
             font-size: 12px;
             background: rgba(0, 0, 0, 0.8);
             padding: 10px;
@@ -224,22 +224,75 @@
   ' ') '( (/                                                                   
     '   '  `
 </pre>
-        </div>
-
-        <div class="fire-container">
-            <pre class="fire-breath">
+            
+            <div class="fire-container">
+                <pre class="fire-breath">
        🔥<span style="color: #ffff00; text-shadow: 0 0 15px #ff6600;">DO NOT TOUCH</span>🔥
      🔥<span style="color: #ffee00; text-shadow: 0 0 15px #ff5500;">DO NOT APPROACH</span>🔥
    🔥<span style="color: #ffdd00; text-shadow: 0 0 15px #ff4400;">DO NOT FEED</span>🔥
  🔥<span style="color: #ffcc00; text-shadow: 0 0 15px #ff3300;">OBSERVE FROM DISTANCE</span>🔥
 🔥<span style="color: #ffbb00; text-shadow: 0 0 15px #ff2200;">PROTECT WILD ANIMALS</span>🔥
 🔥<span style="color: #ffaa00; text-shadow: 0 0 15px #ff1100;">RESPECT WILDLIFE • LEAVE NO TRACE</span>🔥
-            </pre>
+                </pre>
+            </div>
         </div>
     </div>
     
     <div class="warning-frame">
         WILDLIFE PROTECTION MANIFESTO • LEAVE NO TRACE
     </div>
+    <script>
+        // Console citations as required
+        console.log("═══════════════════════════════════════════════");
+        console.log("WILDLIFE PROTECTION MANIFESTO");
+        console.log("═══════════════════════════════════════════════");
+        console.log("Source: Leave No Trace Seven Principles");
+        console.log("Organization: U.S. Fish & Wildlife Service");
+        console.log("Principle #6: Respect Wildlife");
+        console.log("Core Messages:");
+        console.log("  • Observe wildlife from a distance");
+        console.log("  • Never feed animals");
+        console.log("  • Protect wildlife and your food");
+        console.log("  • Control pets at all times");
+        console.log("Dragon ASCII Art by: Alex Wargacki");
+        console.log("URL: https://www.fws.gov/project/leave-no-trace-principles");
+        console.log("═══════════════════════════════════════════════");
+        
+        // Dynamic interaction enhancement
+        const dragon = document.querySelector('.dragon-ascii');
+        const fireContainer = document.querySelector('.fire-container');
+        let isBreathingFire = false;
+        
+        dragon.addEventListener('mouseenter', function() {
+            isBreathingFire = true;
+            console.log("⚠️ DRAGON AWAKENED: Wildlife must be respected!");
+        });
+        
+        dragon.addEventListener('mouseleave', function() {
+            isBreathingFire = false;
+            console.log("✓ Remember: Observe from distance, never approach or feed");
+        });
+        
+        // Mobile tap support
+        dragon.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (fireContainer.style.opacity === '1') {
+                fireContainer.style.opacity = '0';
+            } else {
+                fireContainer.style.opacity = '1';
+            }
+        });
+        
+        // Ambient effect - subtle background glow when dragon breathes fire
+        setInterval(() => {
+            if (isBreathingFire) {
+                document.body.style.background = `linear-gradient(180deg, 
+                    #0a0a0a 0%, 
+                    hsl(${Math.random() * 20}, 100%, ${10 + Math.random() * 5}%) 100%)`;
+            } else {
+                document.body.style.background = 'linear-gradient(180deg, #0a0a0a 0%, #1a0000 100%)';
+            }
+        }, 100);
+    </script>
 </body>
 </html>
