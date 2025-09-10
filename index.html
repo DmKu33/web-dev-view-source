@@ -75,10 +75,13 @@
         font-size: 30px;
         font-weight: bold;
         text-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
-        margin-bottom: 40px;
+        margin-bottom: 80px;
+        margin-top: -60px;
         letter-spacing: 4px;
         animation: pulse 2s infinite;
         transition: transform 0.6s ease; 
+        position: relative;
+        z-index: 2;
     }
 
     .title-text:hover {
@@ -109,12 +112,13 @@
 
     .fire-container {
         position: absolute;
-        bottom: -150px;
-        left: -250px;
+        bottom: -200px;
+        left: -350px;
         opacity: 0;
         transition: opacity 0.4s ease;
         pointer-events: none;
         transform-origin: top left;
+        z-index: 1;
     }
 
     .dragon-ascii:hover .fire-container {
@@ -245,7 +249,6 @@
             🔥🔥🔥<span style="color: #ffdd00; text-shadow: 0 0 15px #ff4400;">DO NOT FEED</span>🔥🔥🔥
         🔥🔥🔥<span style="color: #ffcc00; text-shadow: 0 0 15px #ff3300;">OBSERVE FROM DISTANCE</span>🔥🔥🔥
     🔥🔥🔥<span style="color: #ffbb00; text-shadow: 0 0 15px #ff2200;">PROTECT WILD ANIMALS</span>🔥🔥🔥    
-🔥🔥🔥<span style="color: #ffaa00; text-shadow: 0 0 15px #ff1100;">RESPECT WILDLIFE • LEAVE NO TRACE</span>🔥🔥🔥   
                 </pre>
             </div>
         </div>
@@ -255,7 +258,7 @@
         WILDLIFE PROTECTION MANIFESTO • LEAVE NO TRACE
     </div>
     <script>
-        // Console citations as required
+
         console.log("");
         console.log("WILDLIFE PROTECTION MANIFESTO");
         console.log("");
@@ -271,7 +274,6 @@
         console.log("URL: https://www.fws.gov/project/leave-no-trace-principles");
         console.log("");
         
-        // Dynamic interaction enhancement
         const dragon = document.querySelector('.dragon-ascii');
         const titleText = document.querySelector('.title-text'); 
         const fireContainer = document.querySelector('.fire-container');
@@ -280,16 +282,16 @@
         dragon.addEventListener('mouseenter', function() {
             isBreathingFire = true;
             titleText.style.transform = 'scale(1.5)'; 
-            console.log("DRAGON AWAKENED: Wildlife must be respected!");
+            console.log("DRAGON AWAKENED: Wildlife must be respected!"); // console entry
         });
         
         dragon.addEventListener('mouseleave', function() {
             isBreathingFire = false;
             titleText.style.transform = 'scale(1)'; 
-            console.log("Remember: Observe from distance, never approach or feed");
+            console.log("Remember: Observe from distance, never approach or feed"); // console reminder
         });
         
-        // Mobile tap support
+       
         dragon.addEventListener('click', function(e) {
             e.preventDefault();
             if (fireContainer.style.opacity === '1') {
@@ -299,7 +301,6 @@
             }
         });
         
-        // Ambient effect - subtle background glow when dragon breathes fire
         setInterval(() => {
             if (isBreathingFire) {
                 document.body.style.background = `linear-gradient(180deg, 
